@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+    <strong> Finder App</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" >
+  <img src='../../assets/fondo.png'>
+  <ion-button expand="full" (click)="inicio()" color="danger">
+    <strong>Iniciar sesion</strong>
+  </ion-button>
+  <form class="formulario-content" *ngIf="showLoginForm" >
+    <ion-item>
+      <ion-label class="ion-text-center" position="floating">Ingrese el correo registrado</ion-label>
+      <ion-input class="ion-line" type="text" name="correo" [(ngModel)]="formData.correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-text-center" position="floating">Ingrese la contraseña</ion-label>
+      <ion-input  class="ion-line" type="text" name="Contraseña" [(ngModel)]="formData.password" required></ion-input>
+    </ion-item>
+    <ion-button expand="start" class="custom-button" class="center-button"  color="danger" shape="round" (click)="inicio_sesion()" >Ingresar</ion-button>
+  </form>
+    <ion-button expand="full"  (click)="registro()" color="danger">
+      <strong>Registrarse</strong>
+    </ion-button>
+    <form class="formulario-content" *ngIf="showRegistrationForm" >
+      <ion-item>
+        <ion-label class="ion-text-center" position="floating">Nombre</ion-label>
+        <ion-input class="ion-line" type="text" name="nombre" [(ngModel)]="formData2.nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-center" position="floating">Contraseña</ion-label>
+          <ion-input class="ion-line" type="password" name="nombre" [(ngModel)]="formData2.contrasenia" required></ion-input>
+        </ion-item>
+      <ion-item>
+
+        <ion-label  class="ion-text-center" position="floating">Celular</ion-label>
+        <ion-input  class="ion-line" type="text" name="celular" [(ngModel)]="formData2.celular" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-center" position="floating">Email</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="formData2.email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
+        <ion-input class="ion-line" type="text" name="username" [(ngModel)]="formData2.username" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-center" position="floating">Preferencia de comida</ion-label>
+        <ion-input class="ion-line" type="text" name="pref_comida" [(ngModel)]="formData2.pref_comida" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label  class="ion-text-center" position="floating">Ciudad</ion-label>
+        <ion-input class="ion-line" type="text" name="ubi_actual" [(ngModel)]="formData2.ubi_actual" required></ion-input>
+      </ion-item>
+      <ion-button expand="start" class="custom-button" class="center-button" color="danger" shape="round" (click)="generar_registro()">Registrarse</ion-button>
+    </form>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+</ion-content>
+
+

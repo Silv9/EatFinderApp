@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  color="danger">
+    <ion-title class="ion-text-center">
+      <strong>Mi cuenta</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">  
+
+  <ion-content class="ion-text-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-avatar>
+          <img src="assets/foro_perfil.jpeg" alt="Foto de perfil">
+        </ion-avatar>
+        <ion-card-title>{{ nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ celular }}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <div class="ion-text-center">
+  <ion-button name="inicio" block [routerLink]="['/inicio']" style="margin-top: 20px;" color="danger" shape="round">Cerrar sesion</ion-button>
+  <ion-button name="inicio" (click)="eliminar_usuario()" style="margin-top: 20px;" color="danger" shape="round">Eliminar cuenta</ion-button>
+</div>
+  </ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">cuenta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+</ion-content>

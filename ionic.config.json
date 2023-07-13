@@ -1,0 +1,8 @@
+{
+  "name": "eatFinderApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+
+}

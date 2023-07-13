@@ -1,0 +1,62 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuvv02ofJ2OxUyMwHL5QhmZPO3WlXWG-M"></script>
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Mapa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content >
+    <ion-button expand="full" (click)="toggleForm()" color="danger">
+      <strong>Filtros</strong>
+    </ion-button>
+  
+    <form class="formulario-content" *ngIf="showForm" (ngSubmit)="submitForm()">
+      <ion-item>
+        <ion-label position="floating">Ciudad</ion-label>
+        <ion-input type="text" name="ciudad" [(ngModel)]="formData.ciudad" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Categoría</ion-label>
+        <ion-input type="text" name="categoria" [(ngModel)]="formData.categoria" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Número de estrellas</ion-label>
+        <ion-select name="estrellas" [(ngModel)]="formData.estrellas" required>
+          <ion-select-option value="1">1 estrella</ion-select-option>
+          <ion-select-option value="2">2 estrellas</ion-select-option>
+          <ion-select-option value="3">3 estrellas</ion-select-option>
+          <ion-select-option value="4">4 estrellas</ion-select-option>
+          <ion-select-option value="5">5 estrellas</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Nivel de valor</ion-label>
+        <ion-select name="valor" [(ngModel)]="formData.valor" required>
+          <ion-select-option value="economico">Económico</ion-select-option>
+          <ion-select-option value="premium">Premium</ion-select-option>
+          <ion-select-option value="estandar">Estándar</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-button color="danger" expand="full" type="submit">Generar busqueda</ion-button>
+    </form>
+  </ion-content>
+  
+  <ion-img style="width: 35px; height: 40px;" slot="icon-conly"  src="assets/mapa.PNG"></ion-img>
+  <ion-button name="home" block [routerLink]="['/tabs']" style="margin-top: 20px;" color="danger" shape="round">Home</ion-button>
+  <ion-header collapse="condense">
+  </ion-header>
+
+  
+</ion-content>
+
+<ion-content>
+  <div id="map">
+    <img src="https://10619-2.s.cdn12.com/maps/donde-alberto-manizales-map.jpg" alt="">
+  </div>
+</ion-content>
